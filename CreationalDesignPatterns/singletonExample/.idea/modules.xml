@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sinlgetonExample.iml" filepath="$PROJECT_DIR$/sinlgetonExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/singletonExample.iml" filepath="$PROJECT_DIR$/singletonExample.iml" />
     </modules>
   </component>
 </project>
