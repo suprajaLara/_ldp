@@ -1,18 +1,8 @@
+package Assignment2;
+
 import java.util.HashMap;
 
-public class Assignment2 {
-    public static void main(String[] args) {
-        AlphabetChecker alphabetChecker = new AlphabetChecker();
-        String testString1 = "Hello World";
-        String testString2 = "The quick brown fox jumps over the lazy dog";
-        String testString3 = "1234567891011121314151617181920";
-        System.out.println(testString1+" - "+alphabetChecker.containsAllAlphabets(testString1));
-        System.out.println(testString2+" - "+alphabetChecker.containsAllAlphabets(testString2));
-        System.out.println(testString3+" - "+alphabetChecker.containsAllAlphabets(testString3));
-    }
-}
-
-class AlphabetChecker{
+public class AlphabetChecker {
     boolean containsAllAlphabets(String textToCheck){
         //Time complexity is O(n) ; Space complexity is O(1)
 
@@ -31,7 +21,6 @@ class AlphabetChecker{
                 }
             }
         }
-
         return false;
     }
 }

@@ -1,24 +1,9 @@
+package Assignment1;
+
 import java.io.File;
-import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Assignment1 {
-    public static void main(String[] args) {
-        //Get the user home directory
-        String pathOfHomeDirectory = System.getProperty("user.home");
-
-        //Get the input from user, for regex, to search for all the files
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the regular expression"); // I used "(.txt)$|(.java)$"
-        String regExp = sc.nextLine();
-
-        //Run the findFiles method of PatternSearcher, to get all the files matching the pattern
-        PatternSearcher patternSearcher = new PatternSearcher(pathOfHomeDirectory);
-        patternSearcher.findFiles(regExp);
-    }
-}
-
-class PatternSearcher{
+public class PatternSearcher {
     public String path;
     public File directoryPath;
 
@@ -47,7 +32,8 @@ class PatternSearcher{
         }
     }
 
-    private static boolean isFileNameMatched(String patternToMatch, String fileNameToMatch){
-        return Pattern.compile(patternToMatch, Pattern.CASE_INSENSITIVE).matcher(fileNameToMatch).find();
+    private static boolean isFileNameMatched (String patternToMatch, String fileNameToMatch){
+            return Pattern.compile(patternToMatch, Pattern.CASE_INSENSITIVE).matcher(fileNameToMatch).find();
     }
+
 }
