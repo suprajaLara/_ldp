@@ -9,8 +9,9 @@ public class Assignment8 {
         String name = sc.nextLine();
         System.out.println("enter bill:");
         int bill = sc.nextInt();
-        System.out.println("enter number of people to divide among: ");
-        int noOfPeople = sc.nextInt();
-        Customer customer = new Customer(name,bill,noOfPeople);
+        sc.nextLine(); // to ignore space or new line after int
+        System.out.println("enter mobile number: ");
+        String mobile = sc.nextLine();
+        Customer customer = new Customer(name,bill,mobile);
     }
 }

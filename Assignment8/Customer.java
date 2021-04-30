@@ -3,9 +3,8 @@ package Assignment8;
 public class Customer {
     String name;
     int bill;
-    int noOfPeopleToDivideBill;
-    int eachPart;
-    public Customer(String name, int bill, int noOfPeopleToDivideBill){
+    String mobileNo;
+    public Customer(String name, int bill, String mobileNo){
         try{
             if(name == null || "".equals(name)){
                 throw new EmptyNameException("Customer name cannot be empty");
@@ -13,10 +12,12 @@ public class Customer {
             if(bill==0){
                 throw new BillZeroException("Bill cannot be zero");
             }
-            //throws divide by zero exception, if denominator is zero
-            this.eachPart = bill/noOfPeopleToDivideBill;
+            if(mobileNo==null || mobileNo.length()!=10 ||
+                    !mobileNo.chars().allMatch( Character::isDigit )){
+                throw new MobileNumberFormatException("Mobile number should be 10-digit numeric string");
+            }
         }
-        catch (EmptyNameException | BillZeroException | ArithmeticException e){
+        catch (EmptyNameException | BillZeroException | MobileNumberFormatException e){
             e.printStackTrace();
         }
         finally {
