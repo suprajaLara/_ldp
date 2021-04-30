@@ -11,7 +11,7 @@ public class Assignment6 {
 
         //PART-2
         ConstructorChain constructorChain = new ConstructorChain("Supraja");
-        System.out.println("Assignment6.ConstructorChain data member: "+constructorChain.name);
+        System.out.println("ConstructorChain data member: "+constructorChain.name);
 
         //PART-3
         PrintMessage[] printMessages = new PrintMessage[4];
