@@ -1,0 +1,3 @@
+integer variable: 0 character variable:
+zemoso
+intern

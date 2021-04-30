@@ -1,0 +1,10 @@
+Enter the host:
+www.google.com
+Enter the number of packets:
+5
+64 bytes from maa03s41-in-f4.1e100.net (142.250.195.164): icmp_seq=1 ttl=115 time=40.4 ms
+64 bytes from maa03s41-in-f4.1e100.net (142.250.195.164): icmp_seq=2 ttl=115 time=46.8 ms
+64 bytes from maa03s41-in-f4.1e100.net (142.250.195.164): icmp_seq=3 ttl=115 time=44.8 ms
+64 bytes from maa03s41-in-f4.1e100.net (142.250.195.164): icmp_seq=4 ttl=115 time=43.0 ms
+64 bytes from maa03s41-in-f4.1e100.net (142.250.195.164): icmp_seq=5 ttl=115 time=43.2 ms
+Median is : 43.2

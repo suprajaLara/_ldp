@@ -21,7 +21,7 @@ public class Customer {
             e.printStackTrace();
         }
         finally {
-            System.out.println("Customer Instance creation is called");
+            System.out.println("Customer Instance creation is called - through finally method");
         }
     }
 }

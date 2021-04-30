@@ -1,0 +1,10 @@
+enter name:
+supraja
+enter bill:
+0
+enter mobile number:
+1234567890
+Assignment8.BillZeroException: Bill cannot be zero
+	at Assignment8.Customer.<init>(Customer.java:13)
+	at Assignment8.Assignment8.main(Assignment8.java:15)
+Customer Instance creation is called - through finally method

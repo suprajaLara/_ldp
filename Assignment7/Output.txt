@@ -1,0 +1,33 @@
+Inside Rodent class
+Inside Mouse class
+Inside Rodent class
+Inside Gerbil class
+Inside Rodent class
+Inside Hamster class
+Rodent type : Mouse
+Rodent has teeth : true
+Weight range of rodent : 150-350 grams
+Rodent type : Gerbil
+Rodent has teeth : true
+Weight range of rodent : 100-180 grams
+Rodent type : Hamster
+Rodent has teeth : true
+Weight range of rodent : 400-500 grams
+
+Balancing Unicycle
+Balancing Bicycle
+
+method1 of Interface1
+method3 of Interface2
+method5 of Interface3
+method7 of ChildInterface
+
+Unicycle: No. of wheels are 1
+Bicycle: No. of wheels are 2
+Tricycle: No. of wheels are 3
+
+Constructor message from first inner class : hello first class
+method call of : FirstOuterClass->FirstInnerClass
+Constructor message from first inner class : hello second class
+Constructor message from second inner class : hello second class
+method call of : SecondOuterClass->SecondInnerClass

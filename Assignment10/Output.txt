@@ -1,0 +1,11 @@
+inserted: 100
+inserted: 200
+inserted: 300
+inserted: 400
+size of list is : 4
+[ 100, 200, 300, 400 ]
+removed: 300
+removed: 100
+500 -> item not found
+size of list is : 2
+[ 200, 400 ]
