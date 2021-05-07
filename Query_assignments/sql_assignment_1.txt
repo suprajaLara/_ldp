@@ -1,0 +1,51 @@
+-- 1. Find out the PG-13 rated comedy movies. DO NOT use the film_list table.
+
+SELECT title 
+FROM sakila.film, sakila.film_category, sakila.category
+WHERE rating = 'PG-13'
+    AND name = 'Comedy'
+    AND sakila.film.film_id = sakila.film_category.film_id
+    AND sakila.film_category.category_id = sakila.category.category_id;
+    
+    
+-- 2. Find out the top 3 rented horror movies.
+
+SELECT title
+FROM sakila.film as f, sakila.film_category as fc, sakila.category as c,
+		sakila.inventory as i, sakila.rental as r
+WHERE name = 'Horror'
+    AND r.inventory_id = i.inventory_id
+    AND i.film_id = f.film_id
+    AND f.film_id = fc.film_id
+    AND fc.category_id = c.category_id
+GROUP BY f.title
+ORDER BY COUNT(*) DESC 
+LIMIT 3;
+
+
+-- 3. Find out the list of customers from India who have rented sports movies.
+SELECT DISTINCT name FROM customer_list
+INNER JOIN rental ON rental.customer_id = customer_list.ID
+	INNER JOIN inventory ON inventory.inventory_id = rental.inventory_id
+		INNER JOIN film_list ON film_list.FID = inventory.film_id
+			WHERE film_list.category = 'Sports' 
+				AND customer_list.country = 'India';
+				
+				
+-- 4. Find out the list of customers from Canada who have rented “NICK WAHLBERG” movies.
+SELECT DISTINCT name FROM customer_list 
+INNER JOIN rental ON rental.customer_id = customer_list.ID
+	INNER JOIN inventory ON inventory.inventory_id = rental.inventory_id
+		INNER JOIN film_actor ON film_actor.film_id = inventory.film_id
+			WHERE actor_id = (SELECT actor_id FROM actor
+						WHERE first_name='NICK' AND last_name='WAHLBERG')
+				AND country = 'Canada';
+				
+				
+-- 5. Find out the number of movies in which “SEAN WILLIAMS” acted.
+SELECT COUNT(*) sean_williams_film_count
+FROM film as f, film_actor as fa
+WHERE f.film_id = fa.film_id
+	AND actor_id = (SELECT actor_id FROM actor
+		   		WHERE first_name = 'SEAN' 
+					AND last_name = 'WILLIAMS');

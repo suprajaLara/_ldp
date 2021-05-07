@@ -1,0 +1,56 @@
+-- 1. Find out the number of documentaries with deleted scenes.
+
+SELECT count(*) AS Number_of_documentaries_with_deleted_scenes
+FROM film f
+  INNER JOIN film_category fc ON fc.film_id = f.film_id
+    INNER JOIN category cat ON cat.category_id = fc.category_id
+WHERE cat.name = 'Documentary'
+	AND find_in_set('Deleted Scenes',f.special_features) > 0 ;
+
+
+-- 2. Find out the number of sci-fi movies rented by the store managed by Jon Stephens.
+      
+SELECT COUNT(*) as count_of_scifiMovies_managed_by_Jon_stephens  
+FROM staff, rental 
+WHERE staff.staff_id = rental.staff_id
+	AND first_name = 'Jon' AND staff.last_name = 'Stephens'
+    AND rental.inventory_id IN (SELECT inventory_id 
+				FROM inventory i, film_list fl
+                               WHERE i.film_id = fl.FID
+				AND fl.category = 'Sci-Fi');
+				
+
+-- 3. Find out the total sales from Animation movies.
+
+SELECT total_sales animation_sales
+FROM sales_by_film_category 
+WHERE category = 'Animation';                         
+
+
+-- 4. Find out the top 3 rented category of movies by “PATRICIA JOHNSON”.
+
+SELECT count(*) patricia_category_count, ct.name
+FROM rental r 
+  INNER JOIN inventory i ON i.inventory_id = r.inventory_id 
+    INNER JOIN film_category fc ON fc.film_id = i.film_id 
+      INNER JOIN category ct ON ct.category_id = fc.category_id 
+WHERE r.customer_id = (SELECT cust.customer_id
+			FROM customer cust
+			WHERE cust.first_name = 'PATRICIA' AND cust.last_name = 'JOHNSON') 
+GROUP BY ct.name
+ORDER BY 1 DESC 
+LIMIT 3;
+
+
+-- 5. Find out the number of R rated movies rented by “SUSAN WILSON”.
+
+SELECT count(*)
+FROM sakila.film 
+WHERE rating = 'R' 
+	AND film_id IN (SELECT film_id 
+			FROM sakila.inventory, sakila.rental, sakila.customer
+			WHERE inventory.inventory_id = rental.inventory_id
+			    AND rental.customer_id = customer.customer_id
+                           AND first_name = 'SUSAN' and last_name = 'WILSON');
+                        
+
