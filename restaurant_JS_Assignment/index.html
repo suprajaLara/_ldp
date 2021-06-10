@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant</title>
+    <!-- for trash icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="stylesheet.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="tables">
+            <h2>Tables</h2>
+            <form name="tableForm" action="#">
+                <input class="searchBar" id="tableSearch"
+                    onkeyup="searchTable()" type="text" placeholder="Search table"/>
+            </form>
+            <br>
+            <button class="table" id="table1"></button>
+            <button class="table" id="table2"></button>
+            <button class="table" id="table3"></button>
+        </div>
+
+        <div class="menu">
+            <h2>Menu</h2>
+            <form name="menuForm" action="#">
+                <input class="searchBar" id="menuSearch"
+                       onkeyup="searchMenu()" type="text" placeholder="Search for an item"/>
+            </form>
+            <br>
+            <button class="item" id="item1" draggable="true"></button>
+            <button class="item" id="item2" draggable="true"></button>
+            <button class="item" id="item3" draggable="true"></button>
+            <button class="item" id="item4" draggable="true"></button>
+            <button class="item" id="item5" draggable="true"></button>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="modal-header">
+                    <h3 id="header"></h3>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div>
+                    <div class="flex1">
+                        <p class="flex11"></p>
+                        <p id="totalBill" class="flex12"></p>
+                    </div>
+                    <br>
+                    <div class="flex2">
+                        <p class="flex21"></p>
+                        <h3 id="sessionClose" class="flex22"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script>
+<!--    fetchMenuFromJson();-->
+    loadTableData();
+    loadMenuData();
+</script>
+</html>
