@@ -9,8 +9,8 @@ var getData = (uId) => {
 
 console.log("start");
 
-var promise = getData("skc");
-promise.then(email=>{
-  console.log("Email id of the user id is: " + email);
-  console.log("end");
-});
+var email = await getData("skc");
+
+console.log("Email id of the user id is: " + email);
+
+console.log("end");
