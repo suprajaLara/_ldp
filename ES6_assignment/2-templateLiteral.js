@@ -1,0 +1,1 @@
+const printBill = new Function('name','bill','return `Hi ${name}, please pay: ${bill}`;');

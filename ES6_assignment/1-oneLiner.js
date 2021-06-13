@@ -1,0 +1,1 @@
+const printName = new Function('name', 'return "Hi" + name;');
